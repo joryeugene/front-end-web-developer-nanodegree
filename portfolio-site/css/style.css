@@ -11,18 +11,21 @@ body {
 }
 
 #logo-xs-container .img-responsive {
-  margin: 0 auto;
+  margin: 20px auto 0;
 }
 
 #logo-xs {
   height: 300px;
-}
-/*xxs-logo*/
+} /*xxs-logo*/
 
 #logo {
   height: 120px;
   width: 120px;
   margin-top: 15px;
+}
+
+#header-titles {
+  text-align: right;
 }
 
 #title {
@@ -156,12 +159,20 @@ footer a:active {
     height: 280px;
   }
 
+  #header-titles {
+    text-align: center;
+  }
+
   #title {
-    font-size: 10vw;
+    font-size: 11vw;
   }
 
   #subtitle {
-    font-size: 5vw;
+    font-size: 6vw;
+  }
+
+  #body-heading {
+    font-size: 10vw;
   }
 
   .hidden-xxs {
