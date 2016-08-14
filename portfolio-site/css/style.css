@@ -1,0 +1,135 @@
+body {
+  font-family: "Oswald";
+  padding-bottom: 100px;
+}
+
+#logo {
+  height: 120px;
+  width: 120px;
+  margin-top: 15px;
+}
+
+#title {
+  font-size: 4em;
+}
+
+#subtitle {
+  font-size: 1.5em;
+}
+
+main {
+  display: block; /*Support for lame broswers*/
+}
+
+.tiles {
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+#buttercup {
+  background-image: url("../img/buttercup.png");
+}
+
+#bubbles{
+  background-image: url("../img/bubbles.jpg");
+}
+
+#blossom {
+  background-image: url("../img/blossom.jpg");
+}
+
+
+/***************************Media Queries*************************/
+@media (min-width: 1200px) { /*********Big********/
+  .jumbotron {
+    height: 650px;
+    background: url("../img/main.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) { /*********Medium********/
+  .jumbotron {
+    height: 550px;
+    background: url("../img/main.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) { /*********Small********/
+  .jumbotron {
+    height: 450px;
+    background: url("../img/main.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 767px) { /*********Ex Small********/
+  header .row {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #title {
+    font-size: 3.5em;
+  }
+
+  .jumbotron {
+    background-color: white;
+    padding: 0;
+  }
+
+  .jumbotron img {
+    border-radius: 5px;
+  }
+
+  #tiles-row {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 550px) { /*xxs for iPhone 5 and such*/
+  header .row {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  #title {
+    font-size: 10vw;
+  }
+
+  #subtitle {
+    font-size: 5vw;
+  }
+
+  #tiles-row {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .tiles, .jumbotron {
+    margin-bottom: 15px;
+  }
+
+  .hidden-xxs {
+    display: none !important;
+  }
+
+  .col-xxs-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    float: left;
+    width: 100%;
+  }
+}
