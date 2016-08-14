@@ -3,6 +3,9 @@ body {
   font-family: "Oswald";
 }
 
+/***************************Header*************************/
+
+/*xxs-logo*/
 .visible-xxs {
   display: none !important;
 }
@@ -14,6 +17,7 @@ body {
 #logo-xs {
   height: 300px;
 }
+/*xxs-logo*/
 
 #logo {
   height: 120px;
@@ -29,6 +33,8 @@ body {
   font-size: 1.5em;
 }
 
+/***************************Main*************************/
+
 main {
   display: block; /*Support for lame broswers*/
 }
@@ -38,6 +44,7 @@ main {
   background-position: center;
   background-size: cover;
   box-shadow: 0 1px 5px 1px #2d3c49;
+  margin-bottom: 60px;
   padding: 0;
 }
 
@@ -62,6 +69,11 @@ main {
 
 .tiles-container a:hover .tiles {
   box-shadow: 0 1px 10px 3px #eab54c;
+}
+
+.tiles-container a:active .tiles {
+  position: relative;
+  top: 5px;
 }
 
 .tiles {
@@ -89,6 +101,8 @@ main {
   margin-top: 15px;
 }
 
+/***************************Footer*************************/
+
 footer {
   background-color: #eab54c;
   height: 80px;
@@ -99,6 +113,13 @@ footer p {
   padding-top: 20px;
 }
 
+footer a {
+  color: #ffffff;
+}
+
+footer a:active {
+  color: #007bbb;
+}
 
 /***************************Media Queries*************************/
 
@@ -130,9 +151,9 @@ footer p {
   }
 }
 
-@media (max-width: 550px) { /*xxs for iPhone 5 and such*/
+@media (max-width: 550px) { /*********Extra Ex Small********/
   .jumbotron {
-    height: 250px;
+    height: 280px;
   }
 
   #title {
