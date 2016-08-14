@@ -89,15 +89,15 @@ main {
 }
 
 #buttercup {
-  background-image: url('../img/buttercup.png');
+  background-image: url("../img/buttercup.png");
 }
 
 #bubbles{
-  background-image: url('../img/bubbles.jpg');
+  background-image: url("../img/bubbles.jpg");
 }
 
 #blossom {
-  background-image: url('../img/blossom.gif');
+  background-image: url("../img/blossom.gif");
 }
 
 .tiles-container h3 {
