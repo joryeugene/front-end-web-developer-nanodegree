@@ -43,7 +43,7 @@ main {
 }
 
 .container .jumbotron {
-  background: url("../img/main.jpg") no-repeat;
+  background: url('../img/main.jpg') no-repeat;
   background-position: center;
   background-size: cover;
   box-shadow: 0 1px 5px 1px #2d3c49;
@@ -89,15 +89,15 @@ main {
 }
 
 #buttercup {
-  background-image: url("../img/buttercup.png");
+  background-image: url('../img/buttercup.png');
 }
 
 #bubbles{
-  background-image: url("../img/bubbles.jpg");
+  background-image: url('../img/bubbles.jpg');
 }
 
 #blossom {
-  background-image: url("../img/blossom.gif");
+  background-image: url('../img/blossom.gif');
 }
 
 .tiles-container h3 {
