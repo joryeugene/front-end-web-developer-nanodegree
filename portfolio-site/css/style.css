@@ -1,6 +1,18 @@
 body {
+  color: #2d3c49;
   font-family: "Oswald";
-  padding-bottom: 100px;
+}
+
+.visible-xxs {
+  display: none !important;
+}
+
+#logo-xs-container .img-responsive {
+  margin: 0 auto;
+}
+
+#logo-xs {
+  height: 300px;
 }
 
 #logo {
@@ -21,14 +33,44 @@ main {
   display: block; /*Support for lame broswers*/
 }
 
+.container .jumbotron {
+  background: url("../img/main.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 1px 5px 1px #2d3c49;
+  padding: 0;
+}
+
+#body-heading {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.tiles-container {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.tiles-container a {
+  color: inherit;
+}
+
+.tiles-container a:hover {
+  color: #eab54c;
+  text-decoration: none;
+}
+
+.tiles-container a:hover .tiles {
+  box-shadow: 0 1px 10px 3px #eab54c;
+}
+
 .tiles {
   height: 250px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  border: 2px solid black;
+  box-shadow: 0 1px 5px 1px #2d3c49;
   border-radius: 5px;
-  margin-bottom: 30px;
 }
 
 #buttercup {
@@ -40,67 +82,57 @@ main {
 }
 
 #blossom {
-  background-image: url("../img/blossom.jpg");
+  background-image: url("../img/blossom.gif");
+}
+
+.tiles-container h3 {
+  margin-top: 15px;
+}
+
+footer {
+  background-color: #eab54c;
+  height: 80px;
+  text-align: center;
+}
+
+footer p {
+  padding-top: 20px;
 }
 
 
 /***************************Media Queries*************************/
+
 @media (min-width: 1200px) { /*********Big********/
   .jumbotron {
     height: 650px;
-    background: url("../img/main.jpg") no-repeat;
-    background-position: center;
-    background-size: cover;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) { /*********Medium********/
   .jumbotron {
     height: 550px;
-    background: url("../img/main.jpg") no-repeat;
-    background-position: center;
-    background-size: cover;
   }
 }
 
 @media (min-width: 767px) and (max-width: 991px) { /*********Small********/
   .jumbotron {
     height: 450px;
-    background: url("../img/main.jpg") no-repeat;
-    background-position: center;
-    background-size: cover;
   }
 }
 
 @media (max-width: 767px) { /*********Ex Small********/
-  header .row {
-    padding-left: 15px;
-    padding-right: 15px;
+  .jumbotron {
+    height: 320px;
   }
 
   #title {
     font-size: 3.5em;
   }
-
-  .jumbotron {
-    background-color: white;
-    padding: 0;
-  }
-
-  .jumbotron img {
-    border-radius: 5px;
-  }
-
-  #tiles-row {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
 }
 
 @media (max-width: 550px) { /*xxs for iPhone 5 and such*/
-  header .row {
-    padding-left: 15px;
-    padding-right: 15px;
+  .jumbotron {
+    height: 250px;
   }
 
   #title {
@@ -111,17 +143,12 @@ main {
     font-size: 5vw;
   }
 
-  #tiles-row {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  .tiles, .jumbotron {
-    margin-bottom: 15px;
-  }
-
   .hidden-xxs {
     display: none !important;
+  }
+
+  .visible-xxs {
+    display: block !important;
   }
 
   .col-xxs-12 {
