@@ -1,6 +1,6 @@
 body {
   color: #2d3c49;
-  font-family: "Oswald";
+  font-family: "Oswald", monospace, sans-serif;
 }
 
 /***************************Header*************************/
