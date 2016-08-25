@@ -20,7 +20,8 @@ h6 {
 
 .education-entry,
 .work-entry,
-.project-entry {
+.project-entry,
+.online-entry {
     padding: 0 5%;
 }
 
@@ -44,10 +45,14 @@ h2.orange.center-text {
 }
 
 h3 {
-    font-style: italic;
     font-size: 20px;
-    color: #000;
+    font-style: italic;
+    color: #e2662a;
     line-height: 22px;
+}
+
+#education h3 {
+  margin-top: 15px;
 }
 
 h4 {
@@ -90,7 +95,11 @@ p {
     line-height: 21px;
 }
 
-a {
+#workExperience span {
+  padding: 0;
+}
+
+#workExperience a, #projects a, #education a, #workExperience span {
     color: #1199c3;
     text-decoration: none;
     margin-top: 10px;
@@ -120,6 +129,7 @@ a {
 .white-text {
     font-weight: bold;
     color: #fff;
+    text-decoration: none;
 }
 
 .gray {
@@ -156,15 +166,18 @@ ul {
 
 .biopic {
     float: left;
-    padding: 30px;
+    padding: 7px 30px 0;
     width: 200px;
     display: none;
 }
 
 img {
-    padding: 10px;
+    padding: 0 10px 10px;
 }
 
+.projectDescription {
+  padding-bottom: 10px;
+}
 span {
     padding: 5px;
 }
