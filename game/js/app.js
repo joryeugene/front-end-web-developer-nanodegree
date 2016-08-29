@@ -4,36 +4,36 @@ var lives = 3,
 
 // Class constructor for Enemy
 var Enemy = function(x, y, speed) {
-    this.x = x;
-    this.y = y;
-    this.width = 80;
-    this.height = 50;
-    this.speed = speed;
-    this.sprite = 'images/enemy-bug.png';
+  this.x = x;
+  this.y = y;
+  this.width = 80;
+  this.height = 50;
+  this.speed = speed;
+  this.sprite = 'images/enemy-bug.png';
 };
 
 // Update enemy posiiton
 Enemy.prototype.update = function(dt) {
-    if(this.x < 500){
-        this.x += dt * this.speed;
-    }
-    else {
-        this.x = -200;
-    }
+  if(this.x < 500){
+    this.x += dt * this.speed;
+  }
+  else {
+    this.x = -200;
+  }
 };
 
 // Draw enemy
 Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 // Player class constructor
 var Player = function(x, y) {
-    this.x = x;
-    this.y = y;
-    this.height = 75;
-    this.width = 50;
-    this.sprite = 'images/char-boy.png';
+  this.x = x;
+  this.y = y;
+  this.height = 75;
+  this.width = 50;
+  this.sprite = 'images/char-boy.png';
 };
 
 // Reset player position when player reaches water
