@@ -5,6 +5,14 @@
 * **Initial PageSpeed Insights Score** = Mobile: 28/100, Desktop: 30/100
 * **After Optimization** = Mobile: 96/100, Desktop: 95/100
 
+* Reduce image sizes and optimized
+* Added media query to print.css
+* Inlined main CSS and JS (Alternatively JS and CSS could be external but minified)
+* Added async attribute to analytics.js
+
 ####Part 2: Optimize Frames per Second in pizza.html
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js.
+* De-nested a bunch of function declarations that were stupid
+* Moved DOM queries out of loops
+* Used CSS to capitalize instead of JS
+* Change a bunch of other stuff that is more efficient
