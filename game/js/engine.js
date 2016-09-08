@@ -29,6 +29,24 @@ var Engine = (function(global) {
         main();
     }
 
+    function checkCollisions(allEnemies, player) {
+      for (var i = 0; i < allEnemies.length; i++) {
+        if (allEnemies[i].x < player.x + player.WIDTH &&
+          allEnemies[i].x + allEnemies[i].WIDTH > player.x &&
+          allEnemies[i].y < player.y + player.HEIGHT &&
+          allEnemies[i].HEIGHT + allEnemies[i].y > player.y){
+          player.reset(202, 400);
+          player.lives = player.lives - 1;
+         }
+          document.getElementById("lives").innerHTML = player.lives;
+        if (player.lives < 0) {
+          player.resetStats();
+          allEnemies.resetSpeed();
+          alert("Game Over!");
+        }
+      }
+    }
+
     function update(dt) {
         updateEntities(dt);
         checkCollisions(allEnemies, player);

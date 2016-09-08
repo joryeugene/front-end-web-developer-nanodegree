@@ -4,8 +4,8 @@
 var Enemy = function(x, y, speed) {
   this.x = x;
   this.y = y;
-  this.width = 80;
-  this.height = 50;
+  this.WIDTH = 80;
+  this.HEIGHT= 50;
   this.speed = speed;
   this.sprite = 'images/enemy-bug.png';
 };
@@ -29,10 +29,10 @@ Enemy.prototype.render = function() {
 var Player = function(x, y) {
   this.x = x;
   this.y = y;
-  this.moveX = 101;
-  this.moveY = 85;
-  this.height = 75;
-  this.width = 50;
+  this.MOVE_X = 101;
+  this.MOVE_Y = 85;
+  this.HEIGHT = 75;
+  this.WIDTH = 50;
   this.sprite = 'images/char-boy.png';
   this.lives = 3;
   this.level = 0;
@@ -55,16 +55,16 @@ Player.prototype.render = function() {
 
 Player.prototype.handleInput = function(direction) {
   if (direction === 'left' && this.x > 0) {
-    this.x -= this.moveX;
+    this.x -= this.MOVE_X;
   }
   if (direction === 'right' && this.x < 400) {
-    this.x += this.moveX;
+    this.x += this.MOVE_X;
   }
   if (direction === 'up' && this.y > 0) {
-    this.y -= this.moveY;
+    this.y -= this.MOVE_Y;
   }
   if (direction === 'down' && this.y < 400) {
-    this.y += this.moveY;
+    this.y += this.MOVE_Y;
   }
 };
 
@@ -104,25 +104,6 @@ Player.prototype.resetStats = function() {
   document.getElementById("level").innerHTML = this.level;
   document.getElementById("lives").innerHTML = this.lives;
 };
-
-// Collision
-function checkCollisions(allEnemies, player) {
-  for (var i = 0; i < allEnemies.length; i++) {
-    if (allEnemies[i].x < player.x + player.width &&
-      allEnemies[i].x + allEnemies[i].width > player.x &&
-      allEnemies[i].y < player.y + player.height &&
-      allEnemies[i].height + allEnemies[i].y > player.y){
-      player.reset(202, 400);
-      player.lives = player.lives - 1;
-     }
-      document.getElementById("lives").innerHTML = player.lives;
-    if (player.lives < 0) {
-      player.resetStats();
-      allEnemies.resetSpeed();
-      alert("Game Over!");
-    }
-  }
-}
 
 // Controls
 document.addEventListener('keyup', function(e) {
