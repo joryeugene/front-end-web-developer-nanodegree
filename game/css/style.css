@@ -1,0 +1,13 @@
+body {
+  background-color: orange;
+  font-family: monospace;
+  text-align: center;
+}
+
+#stats{
+  font-size: 35px;
+}
+
+#level {
+  padding-right: 20px;
+}

@@ -7,24 +7,30 @@
       <title>Jory Pestorious - Portfolio</title>
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="css/style.css">
-      <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Oswald:400' rel='stylesheet'>
   </head>
   <body>
 
     <header class="container">
 
-      <div class="row">
-        <div class="col-xs-3 hidden-xxs">
-          <img id="logo" src="img/logo.gif" alt="Mojo Jojo of the Powerpuff Girls">
-        </div>
-        <div class="col-xs-9 col-xxs-12 text-right text-uppercase">
-          <h1 id="title">Jory Pestorious</h1>
-          <h4 id="subtitle">Front-end Ninja</h2>
+      <div class="row visible-xxs">
+        <div id="logo-xs-container" class="col-xs-12">
+          <img id="logo-xs" class="img-responsive" src="img/logo.gif" alt="Mojo Jojo of the Powerpuff Girls">
         </div>
       </div>
 
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-xs-3 hidden-xxs">
+          <img id="logo" src="img/logo.gif" alt="Mojo Jojo of the Powerpuff Girls">
+        </div>
+        <div id="header-titles" class="col-xs-9 col-xxs-12 text-uppercase">
+          <h1 id="title">Jory Pestorious</h1>
+          <h4 id="subtitle">Front-end Ninja</h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
           <hr>
         </div>
       </div>
@@ -32,29 +38,50 @@
     </header>
 
     <main class="container">
-      <div class="jumbotron">
-        <img src="img/main.jpg" alt="Professor Utonium stirring a pot of chemicals" class="visible-xs img-responsive">
+
+      <div class="jumbotron" role="img" aria-label="Professor Utonium stirring a pot of chemicals">
       </div>
 
-      <section id="tiles-row" class="row">
-        <div class="col-sm-4">
-          <div id="buttercup" class="tiles"></div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 id="body-heading" class="text-center">Top Targets</h2>
         </div>
-        <div class="col-sm-4">
-          <div id="bubbles" class="tiles"></div>
+      </div>
+
+      <section class="row">
+        <div class="col-sm-4 tiles-container">
+          <a href="https://en.wikipedia.org/wiki/List_of_The_Powerpuff_Girls_characters#Blossom_Utonium">
+            <div id="blossom" class="tiles" role="img" aria-label="Blossom of the powerpuff girls kicking"></div>
+            <h3>BLOSSOM</h3>
+            <p>Leader of the Powerpuff Girls and my ultimate rival</p>
+          </a>
         </div>
-        <div class="col-sm-4">
-          <div id="blossom" class="tiles"></div>
+        <div class="col-sm-4 tiles-container">
+          <a href="https://en.wikipedia.org/wiki/List_of_The_Powerpuff_Girls_characters#Bubbles_Utonium">
+            <div id="bubbles" class="tiles" role="img" aria-label="Bubbles of the powerpuff girls flying"></div>
+            <h3>BUBBLES</h3>
+            <p>Don't let her joy and laughter deceive you because she packs a powerful punch</p>
+          </a>
+        </div>
+        <div class="col-sm-4 tiles-container">
+          <a href="https://en.wikipedia.org/wiki/List_of_The_Powerpuff_Girls_characters#Buttercup_Utonium">
+            <div id="buttercup" class="tiles" role="img" aria-label="Buttercup of the powerpuff girls looking menacing"></div>
+            <h3>BUTTERCUP</h3>
+            <p>Aggressive and unrelenting, definitely a worthy opponent</p>
+          </a>
         </div>
       </section>
+
     </main>
 
+    <footer>
+        <a href="http://jorypestorious.com/">
+          <p>
+            Jory Pestorious <br>
+            <small>http://jorypestorious.com</small>
+          </p>
+        </a>
+    </footer>
 
-
-
-
-
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

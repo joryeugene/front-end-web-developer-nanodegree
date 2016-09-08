@@ -1,12 +1,31 @@
 body {
-  font-family: "Oswald";
-  padding-bottom: 100px;
+  color: #2d3c49;
+  font-family: "Oswald", monospace, sans-serif;
 }
+
+/***************************Header*************************/
+
+/*xxs-logo*/
+.visible-xxs {
+  display: none !important;
+}
+
+#logo-xs-container .img-responsive {
+  margin: 20px auto 0;
+}
+
+#logo-xs {
+  height: 300px;
+} /*xxs-logo*/
 
 #logo {
   height: 120px;
   width: 120px;
   margin-top: 15px;
+}
+
+#header-titles {
+  text-align: right;
 }
 
 #title {
@@ -17,8 +36,47 @@ body {
   font-size: 1.5em;
 }
 
+/***************************Main*************************/
+
 main {
   display: block; /*Support for lame broswers*/
+}
+
+.container .jumbotron {
+  background: url('../img/main.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 1px 5px 1px #2d3c49;
+  margin-bottom: 60px;
+  padding: 0;
+}
+
+#body-heading {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.tiles-container {
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.tiles-container a {
+  color: inherit;
+}
+
+.tiles-container a:hover {
+  color: #eab54c;
+  text-decoration: none;
+}
+
+.tiles-container a:hover .tiles {
+  box-shadow: 0 1px 10px 3px #eab54c;
+}
+
+.tiles-container a:active .tiles {
+  position: relative;
+  top: 5px;
 }
 
 .tiles {
@@ -26,102 +84,103 @@ main {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  border: 2px solid black;
+  box-shadow: 0 1px 5px 1px #2d3c49;
   border-radius: 5px;
-  margin-bottom: 30px;
 }
 
 #buttercup {
-  background-image: url("../img/buttercup.png");
+  background-image: url(../img/buttercup.png);
 }
 
 #bubbles{
-  background-image: url("../img/bubbles.jpg");
+  background-image: url(../img/bubbles.jpg);
 }
 
 #blossom {
-  background-image: url("../img/blossom.jpg");
+  background-image: url(../img/blossom.gif);
 }
 
+.tiles-container h3 {
+  margin-top: 15px;
+}
+
+/***************************Footer*************************/
+
+footer {
+  background-color: #eab54c;
+  height: 80px;
+  text-align: center;
+}
+
+footer p {
+  padding-top: 20px;
+}
+
+footer a {
+  color: #fff;
+}
+
+footer a:active {
+  color: #007bbb;
+}
 
 /***************************Media Queries*************************/
+
 @media (min-width: 1200px) { /*********Big********/
   .jumbotron {
     height: 650px;
-    background: url("../img/main.jpg") no-repeat;
-    background-position: center;
-    background-size: cover;
   }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) { /*********Medium********/
   .jumbotron {
     height: 550px;
-    background: url("../img/main.jpg") no-repeat;
-    background-position: center;
-    background-size: cover;
   }
 }
 
 @media (min-width: 767px) and (max-width: 991px) { /*********Small********/
   .jumbotron {
     height: 450px;
-    background: url("../img/main.jpg") no-repeat;
-    background-position: center;
-    background-size: cover;
   }
 }
 
 @media (max-width: 767px) { /*********Ex Small********/
-  header .row {
-    padding-left: 15px;
-    padding-right: 15px;
+  .jumbotron {
+    height: 320px;
   }
 
   #title {
     font-size: 3.5em;
   }
-
-  .jumbotron {
-    background-color: white;
-    padding: 0;
-  }
-
-  .jumbotron img {
-    border-radius: 5px;
-  }
-
-  #tiles-row {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
 }
 
-@media (max-width: 550px) { /*xxs for iPhone 5 and such*/
-  header .row {
-    padding-left: 15px;
-    padding-right: 15px;
+@media (max-width: 550px) { /*********Extra Ex Small********/
+  .jumbotron {
+    height: 280px;
+  }
+
+  #header-titles {
+    text-align: center;
   }
 
   #title {
-    font-size: 10vw;
+    font-size: 11vw;
   }
 
   #subtitle {
-    font-size: 5vw;
+    font-size: 6vw;
   }
 
-  #tiles-row {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  .tiles, .jumbotron {
-    margin-bottom: 15px;
+  #body-heading {
+    font-size: 10vw;
   }
 
   .hidden-xxs {
     display: none !important;
+  }
+
+  .visible-xxs {
+    display: block !important;
   }
 
   .col-xxs-12 {
