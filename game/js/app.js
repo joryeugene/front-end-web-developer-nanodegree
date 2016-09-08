@@ -1,6 +1,4 @@
-// Initialize game variables
-var lives = 3,
-    level = 0;
+// 'use strict';
 
 // Class constructor for Enemy
 var Enemy = function(x, y, speed) {
@@ -31,17 +29,22 @@ Enemy.prototype.render = function() {
 var Player = function(x, y) {
   this.x = x;
   this.y = y;
+  this.moveX = 101;
+  this.moveY = 85;
   this.height = 75;
   this.width = 50;
   this.sprite = 'images/char-boy.png';
+  this.lives = 3;
+  this.level = 0;
 };
 
 // Reset player position when player reaches water
 Player.prototype.update = function() {
   if (this.y < 0){
     this.reset();
-    level = level + 1;
-    document.getElementById("level").innerHTML = level;
+    this.level = this.level + 1;
+    document.getElementById("level").innerHTML = this.level;
+    allEnemies.faster(1.2);
   }
 };
 
@@ -52,16 +55,16 @@ Player.prototype.render = function() {
 
 Player.prototype.handleInput = function(direction) {
   if (direction === 'left' && this.x > 0) {
-    this.x -= 101;
+    this.x -= this.moveX;
   }
   if (direction === 'right' && this.x < 400) {
-    this.x += 101;
+    this.x += this.moveX;
   }
   if (direction === 'up' && this.y > 0) {
-    this.y -= 85;
+    this.y -= this.moveY;
   }
   if (direction === 'down' && this.y < 400) {
-    this.y += 85;
+    this.y += this.moveY;
   }
 };
 
@@ -72,6 +75,20 @@ var allEnemies = [
   new Enemy(-200, 230, 225)
 ];
 
+// Make enemies faster at each level
+allEnemies.faster = function (multiplier) {
+  for (var i = 0; i < this.length; i++) {
+    this[i].speed *= multiplier;
+  }
+};
+
+// reset speeds when game is over
+allEnemies.resetSpeed = function() {
+  allEnemies[0].speed = 170;
+  allEnemies[1].speed = 265;
+  allEnemies[2].speed = 225;
+};
+
 // Instantiates player
 var player = new Player(202, 400);
 
@@ -81,12 +98,12 @@ Player.prototype.reset = function() {
   this.y = 400;
 };
 
-function resetStats() {
-  lives = 3;
-  level = 0;
-  document.getElementById("level").innerHTML = level;
-  document.getElementById("lives").innerHTML = lives;
-}
+Player.prototype.resetStats = function() {
+  this.lives = 3;
+  this.level = 0;
+  document.getElementById("level").innerHTML = this.level;
+  document.getElementById("lives").innerHTML = this.lives;
+};
 
 // Collision
 function checkCollisions(allEnemies, player) {
@@ -96,11 +113,12 @@ function checkCollisions(allEnemies, player) {
       allEnemies[i].y < player.y + player.height &&
       allEnemies[i].height + allEnemies[i].y > player.y){
       player.reset(202, 400);
-      lives = lives - 1;
+      player.lives = player.lives - 1;
      }
-      document.getElementById("lives").innerHTML = lives;
-    if (lives < 0) {
-      resetStats();
+      document.getElementById("lives").innerHTML = player.lives;
+    if (player.lives < 0) {
+      player.resetStats();
+      allEnemies.resetSpeed();
       alert("Game Over!");
     }
   }

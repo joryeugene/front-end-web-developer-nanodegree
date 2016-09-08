@@ -1,13 +1,6 @@
 Arcade Game
 ===
-
-## Play it [here](http://jorypestorious.com/front-end-web-developer-nanodegree/game)
-
-### How to Play
-* Get to the water without touching a bug
-
-#### Controls
-* **Move Up:** Up arrow
-* **Move Down:** Down arrow
-* **Move Left:** Left arrow
-* **Move Right:** Right arrow
+** Made with HTML5 canvas and Object-oriented JavaScript **
+## How to Play:
+* Check it out [here](http://jorypestorious.com/front-end-web-developer-nanodegree/game)
+* **OR** Download files/clone repository and open index.html
