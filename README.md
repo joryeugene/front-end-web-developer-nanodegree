@@ -10,3 +10,6 @@ This is some of my work done while doing the _Udacity_ **Front-end Web Developer
   * Check it out [here](http://jorypestorious.com/front-end-web-developer-nanodegree/game)
 * **Feed Reader Web Application** - Implemented with Test-driven Development using Jasmine JavaScript Testing Framework
   * Check it out [here](http://jorypestorious.com/front-end-web-developer-nanodegree/feedreader-tdd)
+* **Moving Companion** - Utilizes New York Times, Wikipedia, and Google Streetview APIs and AJAX
+  * Input an address and get a street view image and information about the city from the New York Times and Wikipedia
+  * Check it out [here](http://jorypestorious.com/front-end-web-developer-nanodegree/api-ajax-project
