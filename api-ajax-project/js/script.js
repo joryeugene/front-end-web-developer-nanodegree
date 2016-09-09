@@ -16,8 +16,8 @@ function loadData() {
     var $cityInput = $('#city').val();
     var address = $streetInput + ', ' + $cityInput;
     $greeting.text('So, you want to live at ' + address + '?');
-    var imageAddress = 'http://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + address;
-    $body.append('<img class="bgimg" src="' + imageAddress + '">');
+    var imageURL = encodeURI('http://maps.googleapis.com/maps/api/streetview?size=600x400&location=' + address);
+    $('#bg').css('background-image', 'url(' + imageURL + ')');
 
     // NYT API Async request
     var nytURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
