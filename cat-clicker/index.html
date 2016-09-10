@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cat Clicker Premium Pro</title>
+
+  <style>
+    body, html {
+      padding: 0;
+      margin: 0;
+    }
+    .container {
+      width: 25%;
+      float: left;
+    }
+    #catViewer {
+      margin-top: 2%;
+      margin-left: 3.3%;
+      margin-right: 3.3%;
+      width: 65%;
+      text-align: center;
+      font-size: 3rem;
+    }
+    img {
+      height: 90vh;
+    }
+    #catSelection {
+      margin-top: 3%;
+    }
+    #catSelection li {
+      font-size: 1.3rem;
+    }
+    #catSelection > div {
+      font-size: 2rem;
+    }
+    #hideMe {
+      background-color: yellow;
+      display: block;
+    }
+    #showMe {
+      display: none;
+    }
+    #adminMode {
+      display: none;
+    }
+    button {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container" id="catViewer">
+    <div id="hideMe">Select Your Cat on the Right</div>
+    <div id="showMe">
+      <div><span id="catName"></span> Clicks: <span id="catCounter">0</span></div>
+      <img id="catImage" src="" alt="A cat">
+    </div>
+  </div>
+
+  <div class="container" id="catSelection">
+    <div>Cat Selection</div>
+    <ul id="catList">
+    </ul>
+
+    <fieldset>
+      <legend>Admin</legend>
+      <button onclick="view.adminMode.toggle()">Admin Mode</button>
+      <div id="adminMode">
+        <label for="name">Name <input id="name" type="text"></label>
+        <br>
+        <button onclick="view.adminMode.save()">Save</button>
+      </div>
+    </fieldset>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

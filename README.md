@@ -13,3 +13,5 @@ This is some of my work done while doing the _Udacity_ **Front-end Web Developer
 * **Moving Companion** - Utilizes New York Times, Wikipedia, and Google Streetview APIs and AJAX
   * Input an address and get a street view image and information about the city from the New York Times and Wikipedia
   * Check it out [here](http://jorypestorious.com/front-end-web-developer-nanodegree/api-ajax-project)
+* **Cat Clicker** - Made to practice the MVC design pattern
+  * Check it out [here](http://jorypestorious.com/front-end-web-developer-nanodegree/cat-clicker)
