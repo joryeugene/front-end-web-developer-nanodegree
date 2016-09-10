@@ -115,3 +115,7 @@ document.addEventListener('keyup', function(e) {
   };
   player.handleInput(allowedKeys[e.keyCode]);
 });
+
+function dpad(input) {
+  player.handleInput(input);
+}

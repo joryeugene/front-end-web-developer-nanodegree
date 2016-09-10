@@ -11,3 +11,114 @@ body {
 #level {
   padding-right: 20px;
 }
+
+.dpad {
+  position:relative;
+  width:144px;
+  height:144px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.dpad a {
+  display:block;
+  text-indent:-99999px;
+  /*
+  background-color:#cccccc;
+  uncomment for hit area sizes
+  */
+  position:absolute;
+  width:44px;
+  height:44px;
+  cursor:pointer;
+}
+
+.dpad a.up {
+  padding-top:6px;
+  left:50px;
+  top:0px;
+}
+
+.dpad a.down {
+  padding-bottom:6px;
+  top: 94px;
+  left: 50px;
+}
+
+.dpad a.left {
+  padding-left:6px;
+  left:0px;
+  top:50px;
+}
+
+.dpad a.right {
+  padding-right:6px;
+  left: 94px;
+  top: 50px;
+}
+
+.dpad a:after {
+  content:" ";
+  display:block;
+  width:44px;
+  height:44px;
+  background-color:#333333;
+  background-image: url(../images/d-arrows.svg);
+  background-repeat: no-repeat;
+  position:absolute;
+  top:0px;
+  left:0px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  box-sizing: border-box;
+  -webkit-transition: all 100ms ease-in;
+  -moz-transition: all 100ms ease-in;
+  -ms-transition: all 100ms ease-in;
+  -o-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
+}
+
+.dpad a:hover:after {
+  background-color:#FF8C00;
+}
+
+.dpad a.up:after {
+  left:0px;
+  top:16px;
+  background-position: 0px -2px;
+}
+
+.dpad a.left:after {
+  left:16px;
+  top:0px;
+  background-position: -46px 0px;
+}
+
+.dpad a.right:after {
+  left:-10px;
+  top:0px;
+  background-position: -42px -44px;
+}
+
+.dpad a.down:after {
+  left:0px;
+  top:-10px;
+  background-position: 0px -42px;
+}
+
+.dpad a.up:hover:after {
+  background-position: 0px -4px;
+}
+
+.dpad a.left:hover:after {
+  background-position: -48px 0px;
+}
+
+.dpad a.right:hover:after {
+  background-position: -40px -44px;
+}
+
+.dpad a.down:hover:after {
+  background-position: 0px -40px;
+}
