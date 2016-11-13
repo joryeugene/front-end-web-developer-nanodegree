@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Deals Around You</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="map-canvas"></div>
+
+  <div class="searchbar" data-bind="visible: searchBarShow() === true">
+    <form data-bind="submit: processLocationSearch">
+      <input type="text" placeholder="Find deals in your area" data-bind="value: searchLocation, selectOnFocus: true" id="autocomplete">
+      <input type="submit" value="Go!" class="submit">
+      <p data-bind="text: searchStatus"></p>
+    </form>
+    <form data-bind="submit: filterResults" class="resultsform">
+      <input type="text" placeholder="Filter by name/type" data-bind="value:filterKeyword, selectOnFocus: true">
+      <input type="submit" value="Find!" class="submit">
+      <p data-bind="visible: filterKeyword().length > 0, click: clearFilter" class="clearbutton">Clear filter</p>
+    </form>
+  </div>
+
+  <div title="Re-center map" class="locbtn-large" data-bind="click: centerMap">
+    <i class="fa fa-compass fa-2x"></i>
+  </div>
+
+  <div class="results">
+    <div>
+      <h2 class="status-msg" data-bind="text: dealStatus"></h2>
+      <span class="toggler" data-bind="text: toggleSymbol, click: listToggle"></span>
+    </div>
+    <div>
+      <p class="waiting" data-bind="html: loadImg"></p>
+      <ul id="results-list" data-bind="visible: toggleSymbol() === 'hide', foreach: filteredList">
+        <li data-bind="click: $parent.goToMarker">
+          <h4 data-bind="text: dealName"></h4>
+          <p class="address" data-bind="html: dealAddress"></p>
+          <p data-bind="text: dealShortBlurb"></p>
+          <p data-bind="html: dealRating" class="rating"></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div>
+
+<!-- Mobile list of results, mobile navigation buttons, hidden until media query is activated -->
+  <div title="toggle search bar" class="searchbtn" data-bind="click: searchToggle">
+    <i class="fa fa-search"></i>
+  </div>
+
+  <div title="re-center map" class="locbtn" data-bind="click: centerMap">
+    <i class="fa fa-compass"></i>
+  </div>
+
+  <div title="toggle list view" class="mobilebutton" data-bind="click: mobileToggleList">
+    <i class="fa fa-bars"></i>
+  </div>
+
+  <div class="mobileresults" data-bind="visible: mobileShow() === true">
+    <div>
+      <h2 class="status-msg" data-bind="text: dealStatus"></h2>
+    </div>
+    <div class="mobile-results">
+      <p class="waiting" data-bind="html: loadImg"></p>
+      <ul class="results-list" data-bind="visible: toggleSymbol() === 'hide', foreach: filteredList">
+        <li data-bind="click: $parent.goToMarker">
+          <h4 data-bind="text: dealName"></h4>
+          <p class="address" data-bind="html: dealAddress"></p>
+          <p data-bind="text: dealShortBlurb"></p>
+          <p data-bind="html: dealRating" class="rating"></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Start of StatCounter Code for Default Guide -->
+  <script type="text/javascript">
+    var sc_project=10304038;
+    var sc_invisible=1;
+    var sc_security="03b3a4d8";
+    var scJsHost = (("https:" == document.location.protocol) ?
+    "https://secure." : "http://www.");
+    document.write("<sc"+"ript type='text/javascript' src='" +
+    scJsHost+
+    "statcounter.com/counter/counter.js'></"+"script>");
+  </script>
+  <noscript><div class="statcounter"><a title="web analytics"
+  href="http://statcounter.com/" target="_blank"><img
+  class="statcounter"
+  src="http://c.statcounter.com/10304038/0/03b3a4d8/1/"
+  alt="web analytics"></a></div></noscript>
+  <!-- End of StatCounter Code for Default Guide -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBuyIEMmRw3_42z8i7LUcGad69H76LD0Wk"></script>
+  <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.0.0.js"></script>
+  <script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+
+  </div>
+</body>
+</html>
